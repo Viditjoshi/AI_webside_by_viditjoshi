@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.image-generator{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    background-position: center;
+    background: url("./img/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.image-generator::before{
+    opacity: 0.5;
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+}
+.image-generator .content{
+    color: white;
+    padding: 0 15px;
+    max-width: 760px;
+    text-align: center;
+    position: relative;
+}
+.image-generator h1{
+    font-size: 1.3cm;
+    font-weight: 700;
+}
+.image-generator p{
+    font-size: 0.4cm;
+    margin-top: 10px;
+}
+.image-generator .generate-from{
+    height: 56px;
+    width: 100%;
+    display : flex;
+    padding: 6px;
+    margin: 45px 0 15px;
+    align-items: center;
+    background: white;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+.generate-from .prompt-input{
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0 17px;
+}
+.generate-from .controls{
+    display: flex;
+    height: 100%;
+    gap: 15px;
+}
+.generate-from .img-quantity{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.generate-from .generate-btn{
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background: #4949E7;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 700;
+    padding: 0 25px;
+    cursor: pointer;
+}
+.image-gallery{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    max-width: 1250px;
+    margin: 50px auto;
+    justify-content: center;
+    
+}
+.image-gallery .img-card{
+    width: 285px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;   
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    background: #f2f2f2;
+}
+.image-gallery .img-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image-gallery .img-card .loading img {
+    width: 80px;
+    height: 80px;
+}
+.image-gallery .img-card .download-btn{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #fff;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+.image-gallery .img-card:not(.loading):hover .download-btn
+{
+    display: flex;
+}
+
+.image-gallery .img-card .download-btn img{
+    width: 14px;
+    height: 14px;
+}
+/* media query*/
+
+@media screen and (max-width: 750px){
+    .image-generator h1{
+        font-size: 1.5rem;
+    }
+    .image-generator p{
+        font-size: 1rem;
+    }
+    .image-generator .generate-from{
+        margin-top: 30px;
+        height: 52px;
+        display: block;
+    }
+    .generate-from .controls{
+        height: 40px;
+        margin-top: 15px;
+        align-items: center;
+        justify-content: flex-end;
+
+    }
+    .generate-from .img-quantity{
+        color: #fff;
+    }
+    .generate-from .img-quantity option{
+        color:#000000;
+    }
+    .generate-from .generate-btn{
+        height: 100%;
+    }
+    .image-gallery{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 550px){
+    .image-gallery .img-card{
+        width: 100%;
+    }
+}
